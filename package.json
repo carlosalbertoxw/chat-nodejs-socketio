@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/carlosalbertoxw/chat-nodejs-socketio#readme",
   "dependencies": {
-    "express": "^4.22.2",
+    "express": "^5.2.1",
     "socket.io": "^4.8.3"
   },
   "devDependencies": {
