@@ -1,0 +1,36 @@
+*{
+	box-sizing: border-box;
+}
+#messages,
+#chat-form{
+	width: 95%;
+	max-width: 400px;
+}
+#messages{
+	height: 350px;
+	overflow-y: scroll;
+	border: 1px solid #eee;
+	box-shadow: 0px 0px 20px #ccc inset;
+}
+.message{
+	margin: 20px;
+	padding: 5px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	background: white;
+}
+/* Conserva los saltos de línea y parte las palabras muy largas */
+.message p{
+	white-space: pre-wrap;
+	overflow-wrap: anywhere;
+}
+#chat-form > *{
+	display: block;
+	width: 100%;
+	margin-top: 4px;
+}
+#status{
+	min-height: 1.2em;
+	margin-bottom: 0;
+	color: #b00020;
+}
