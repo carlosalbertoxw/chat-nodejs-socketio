@@ -1,44 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
 	<head>
-		<meta charset="utf8" />
+		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Chat con NodeJS y SocketIO</title>
-		<script type="text/javascript" src="/socket.io/socket.io.js"></script>
-		<script type="text/javascript" src="main.js"></script>
-		<style type="text/css">
-			#messages{
-				width: 95%;
-				max-width: 400px;
-				height: 350px;
-				overflow-y: scroll;
-				border: 1px solid #eee;
-				box-shadow: 0px 0px 20px #ccc inset;
-			}
-			.message{
-				margin: 20px;
-				padding: 5px;
-				border-radius: 5px;
-				border: 1px solid #ccc;
-				background: white;
-			}
-			textarea{
-				width: 95%;
-				max-width: 400px;
-			}
-			#button{
-				width: 95%;
-				max-width: 405px;
-			}
-		</style>
+		<link rel="stylesheet" href="styles.css">
+		<script src="/socket.io/socket.io.js" defer></script>
+		<script src="main.js" defer></script>
 	</head>
-	<body onload="setNickname();">
+	<body>
 		<h1>Chat con NodeJS y SocketIO</h1>
-		<div id="messages"></div>
-		<div>
-			<input type="hidden" id="nickname" value="Anonimo">
-			<textarea id="text" placeholder="Mensaje..."></textarea><br>
-			<input onclick="addMessage();" id="button" type="submit" value="Enviar">
-		</div>
+		<div id="messages" role="log" aria-live="polite" tabindex="0"></div>
+		<form id="chat-form">
+			<input id="nickname" maxlength="30" placeholder="Nickname (opcional)" aria-label="Nickname" autocomplete="nickname">
+			<textarea id="text" maxlength="500" rows="3" placeholder="Mensaje... (Shift+Enter para otra línea)" aria-label="Mensaje" required></textarea>
+			<p id="status" role="status"></p>
+			<button>Enviar</button>
+		</form>
 	</body>
 </html>
